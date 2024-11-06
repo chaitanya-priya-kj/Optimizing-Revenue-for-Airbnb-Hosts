@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analysis Result</title>
+</head>
+<body>
+    <h1>Analysis Result</h1>
+    <p>Average price: ${{ analysis_result.average_price }}</p>
+    <p>Number of listings: {{ analysis_result.num_listings }}</p>
+    <h2>Top Ten Amenities:</h2>
+    <ul>
+        {% for amenity in analysis_result.top_ten_amenities %}
+            <li>{{ amenity }}</li>
+        {% endfor %}
+    </ul>
+    <h2>Top Three Months Booked:</h2>
+    <ul>
+        {% for month in analysis_result.top_three_months %}
+            <li>{{ month }}</li>
+        {% endfor %}
+    </ul>
+    <h2>Top 5 Property Types:</h2>
+    <ul>
+        {% for property_type, percentage in analysis_result.top_five_property_types %}
+            <li>{{ property_type }}: {{ percentage }}%</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
